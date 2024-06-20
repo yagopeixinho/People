@@ -1,0 +1,61 @@
+﻿@model List<UserViewModel>
+
+@{
+    ViewData["Title"] = "Nossos usuários";
+}
+
+<div class="mt-5">
+    <h1 class="display-4 mb-4 text-center">Nossos usuários</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td class="align-middle">
+                        <img src="@user.Picture.Large" class="img-thumbnail" alt="User picture" />
+                    </td>
+                    <td class="align-middle">@user.Name.First</td>
+                    <td class="align-middle">@user.Email</td>
+                    <td class="align-middle">
+                        <button class="btn btn-outline-dark" onclick="redirectToEdit('@user.Id.Value')">Editar</button>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function redirectToEdit(userId) {
+        window.location.href = `/User/Edit/${userId}`;
+    }
+</script>
+
+<style>
+    .img-thumbnail {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .table {
+        margin: 0 auto; 
+        width: 80%; 
+        max-width: 100%;
+    }
+
+    .align-middle {
+        vertical-align: middle; 
+    }
+</style>
