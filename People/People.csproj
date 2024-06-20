@@ -36,6 +36,7 @@
       <_ContentIncludedByDefault Remove="People.Web\Views\User\Index.cshtml" />
       <_ContentIncludedByDefault Remove="People.Web\Views\_ViewImports.cshtml" />
       <_ContentIncludedByDefault Remove="People.Web\Views\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\README\PeopleLogo.png" />
     </ItemGroup>
 
     <ItemGroup>
